@@ -29,6 +29,23 @@ class Post extends HTMLElement {
         ]
     }
 
+    get title() {
+        return this.getAttribute('title')
+    }
+
+    set title(val) {
+        this.setAttribute('title', val)
+        this.dispatchEvent(new CustomEvent('titleChanged', { detail: this.val }));
+    }
+
+    get body() {
+        return this.getAttribute('body')
+    }
+
+    set body(val) {
+        bodu.setAttribute('body')
+    }
+
     attributeChangedCallback(attr, oldVal, newVal) {
         switch (attr) {
             case 'title':
